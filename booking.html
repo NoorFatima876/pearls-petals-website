@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking - Pearls & Petals</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: url("images/jew.jfif") no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      background: #D47A77;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: center;
+      gap: 90px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.3rem;
+      padding: 8px 18px;
+      border-radius: 20px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 600px;
+      padding: 25px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.88);
+      margin-top: 80px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 8px;
+    }
+
+    button {
+      width: 100%;
+      background: #D47A77;
+      padding: 12px;
+      border-radius: 25px;
+      color: white;
+      font-size: 1.4rem;
+      cursor: pointer;
+      margin-top: 15px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="Jewellery.html">Home</a>
+  <a href="About.html">About Us</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+  <h2>Product Booking Form</h2>
+  <form id="bookingForm">
+    <input type="text" id="b_name" placeholder="Full Name" required>
+    <input type="email" id="b_email" placeholder="Email Address" required>
+    <input type="text" id="b_phone" placeholder="Phone Number" required>
+    <textarea id="b_address" rows="3" placeholder="Complete Address" required></textarea>
+
+    <!-- Product prefilled from Jewellery.html -->
+    <input type="text" id="product" readonly placeholder="Selected Product" required>
+    <input type="text" id="price" readonly placeholder="Price" required>
+
+    <button type="button" onclick="sendBooking()">Confirm Booking</button>
+  </form>
+</div>
+
+<script src="script.js"></script>
+<script>
+  // Get product & price from URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const productParam = urlParams.get('product');
+  const priceParam = urlParams.get('price');
+
+  if (productParam) document.getElementById('product').value = productParam;
+  if (priceParam) document.getElementById('price').value = priceParam; // Only number
+</script>
+
+</body>
+</html>
