@@ -1,2 +1,2 @@
 # pearls-petals-website
-Pearls &amp; Petals is a jewellery management and booking website designed to showcase jewellery collections and allow customers to place bookings online. The system includes frontend pages for users and backend PHP scripts connected to a MySQL database for handling bookings and form data. This project is developed for academic and learning purposes.
+Pearls &amp; Petals is a jewellery management and booking website designed to showcase jewellery collections and allow customers to place bookings online. The system includes frontend pages for users and backend connected to a MongoDB database for handling bookings and form data. This project is developed for academic and learning purposes.
